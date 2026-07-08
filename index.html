@@ -218,7 +218,7 @@ function tone(freq,when,dur,type='triangle',vol=.18){
   o.connect(g).connect(a.destination);o.start(t);o.stop(t+dur+.05);
 }
 const sndGood=()=>{tone(660,0,.15);tone(880,.12,.22);};
-const sndBad =()=>tone(220,0,.28,'sine',.12);
+const sndBad =()=>{tone(392,0,.16,'sine',.09);tone(330,.16,.24,'sine',.08);};
 const sndWin =()=>[523,659,784,1047].forEach((f,i)=>tone(f,i*.13,.22));
 function speak(t){
   if(!t||!('speechSynthesis' in window))return;
