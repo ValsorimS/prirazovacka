@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Přiřazovačka — návod pro učitele</title>
+<style>
+:root{
+  --bg:#fdf6ec; --card:#ffffff; --ink:#3b3245; --muted:#8a7f99;
+  --accent:#ff8a3d; --accent2:#7c5cff; --good:#2fb56b;
+  --radius:20px; --shadow:0 4px 14px rgba(60,40,90,.10);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.55;font-size:17px;
+}
+.wrap{max-width:760px;margin:0 auto;padding:32px 22px 60px}
+header.hero{text-align:center;margin-bottom:34px}
+.hero h1{font-size:34px;margin:0 0 6px}
+.hero p{color:var(--muted);margin:0;font-size:18px}
+.hero .app-link{display:inline-block;margin-top:16px;background:linear-gradient(135deg,#ff8a3d,#ff5f6d);
+  color:#fff;font-weight:800;text-decoration:none;padding:12px 26px;border-radius:16px;
+  box-shadow:0 6px 16px rgba(255,110,60,.35)}
+section{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:24px 26px;margin-bottom:20px}
+h2{font-size:22px;margin:0 0 14px;display:flex;align-items:center;gap:10px}
+h2 .n{flex:none;width:34px;height:34px;border-radius:50%;background:var(--accent2);color:#fff;
+  display:inline-flex;align-items:center;justify-content:center;font-size:17px}
+h3{font-size:17px;margin:18px 0 6px}
+p{margin:8px 0}
+ul,ol{margin:8px 0;padding-left:24px}
+li{margin:5px 0}
+.mockbtn{display:inline-block;background:#efe9f7;border-radius:10px;padding:3px 10px;
+  font-weight:700;font-size:15px;white-space:nowrap}
+.mockbtn.orange{background:linear-gradient(135deg,#ff8a3d,#ff5f6d);color:#fff}
+.mockbtn.green{background:var(--good);color:#fff}
+.mockbtn.ghost{background:#fff;box-shadow:var(--shadow)}
+.tip{background:#f2fbf5;border-left:4px solid var(--good);border-radius:0 12px 12px 0;
+  padding:10px 16px;margin:14px 0}
+.warn{background:#fff7ee;border-left:4px solid var(--accent);border-radius:0 12px 12px 0;
+  padding:10px 16px;margin:14px 0}
+.tip b,.warn b{display:block;margin-bottom:2px}
+.idea{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:10px 0;
+  background:#faf7ff;border-radius:14px;padding:12px 16px}
+.idea .emo{font-size:28px;grid-row:span 2}
+.idea b{align-self:end}
+.idea span{color:var(--muted);font-size:15px}
+footer{color:var(--muted);font-size:14px;text-align:center;margin-top:30px}
+footer a{color:var(--accent2)}
+@media print{
+  body{background:#fff;font-size:13px}
+  section{box-shadow:none;border:1px solid #ddd;break-inside:avoid;padding:16px 20px}
+  .hero .app-link{color:#000;background:#fff;border:2px solid #000;box-shadow:none}
+  .no-print{display:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>🧩 Přiřazovačka</h1>
+  <p>Návod pro učitele — jak vytvářet úlohy a sledovat výsledky</p>
+  <a class="app-link no-print" href="https://valsorims.github.io/prirazovacka/">▶ Otevřít aplikaci</a>
+</header>
+
+<section>
+  <h2><span class="n">?</span>Co aplikace umí</h2>
+  <p>Přiřazovačka je stavebnice úloh typu <i>„vezmi obrázek a polož ho na správné místo“</i>.
+  Vy si připravíte <b>scénář</b> — pozadí, cílová místa a nabídku obrázků — a dítě pak
+  prstem přetahuje obrázky tam, kam patří. Například: <i>„Vyber všechnu zeleninu a dej ji
+  na talíř.“</i></p>
+  <ul>
+    <li>Za chybu se netrestá — obrázek se jen vrátí zpět do nabídky.</li>
+    <li>Žádné časové limity, velká tlačítka, zadání se přečte nahlas.</li>
+    <li>Správné položení odmění zvuk a hvězdičky, na konci malá oslava.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="n">1</span>První spuštění na iPadu</h2>
+  <ol>
+    <li>V Safari otevřete adresu <b>valsorims.github.io/prirazovacka</b>.</li>
+    <li>Ťukněte na tlačítko <b>Sdílet</b> (čtvereček se šipkou) a zvolte
+      <b>Přidat na plochu</b>.</li>
+    <li>Na ploše iPadu se objeví ikona — aplikace se z ní spouští na celou obrazovku
+      jako běžná aplikace.</li>
+  </ol>
+  <p>Na interaktivní tabuli stačí otevřít stejnou adresu v prohlížeči —
+  přetahování funguje i myší nebo perem.</p>
+</section>
+
+<section>
+  <h2><span class="n">2</span>Režim učitele</h2>
+  <p>Vše pro učitele je schované, aby to dítě nezapnulo omylem. Na úvodní obrazovce
+  <b>podržte prst zhruba 1&nbsp;sekundu</b> na tlačítku
+  <span class="mockbtn ghost">🔧 Pro učitele (podržet)</span> — krátké ťuknutí nestačí.</p>
+  <p>Objeví se úpravy scénářů, <span class="mockbtn ghost">📊 Výsledky</span> a tlačítko
+  <span class="mockbtn ghost">✕ Zavřít režim učitele</span>, kterým se vrátíte do dětského zobrazení.</p>
+</section>
+
+<section>
+  <h2><span class="n">3</span>Vytvoření scénáře krok za krokem</h2>
+  <p>V režimu učitele ťukněte na <span class="mockbtn" style="background:#7c5cff;color:#fff">＋ Nový scénář</span>.</p>
+
+  <h3>Název a zadání</h3>
+  <p>Napište název (vidíte ho jen vy v seznamu) a <b>zadání pro dítě</b> — to se
+  zobrazuje ve hře a po ťuknutí na 🔊 se přečte nahlas česky. Tlačítkem 🔊 vedle
+  políčka si čtení hned vyzkoušíte.</p>
+
+  <h3>1) Pozadí</h3>
+  <p>Vyberte jedno z připravených prostředí (kuchyně, louka, pokoj…), nebo ťukněte na
+  <b>📷 Vlastní fotka</b> a nahrajte vlastní obrázek — třeba fotku skutečného stolu ze třídy.</p>
+
+  <h3>2) Cílové zóny</h3>
+  <p>Zóna je místo, kam se má přetahovat (talíř, košík, stůl…).</p>
+  <ul>
+    <li><span class="mockbtn">＋ Přidat zónu</span> vloží zónu doprostřed obrázku.</li>
+    <li><b>Prstem ji přetáhnete</b> na správné místo, <b>fialovým rohem</b> změníte velikost.</li>
+    <li>Po ťuknutí na zónu ji dole pojmenujete (např. „Talíř“) a můžete jí dát emoji,
+      které se v ní zobrazí jako nápověda (🍽️, 🧺, 📦…).</li>
+    <li>Zón může být i více najednou — pak dítě třídí do několika míst.</li>
+  </ul>
+
+  <h3>3) Obrázky</h3>
+  <p>Obrázky, které bude dítě přetahovat, přidáte třemi způsoby:</p>
+  <ul>
+    <li><b>📷 Nahrát fotky</b> — vlastní fotky z iPadu (samy se zmenší).</li>
+    <li><b>Emoji</b> — napište je z klávesnice (🥕🍅🥦) a ťukněte na ＋ Přidat emoji.</li>
+    <li><b>🔍 Hledat</b> — napište české slovo (mrkev, pes, čistit zuby…) a vyberte
+      z nabídky piktogramů. Vyhledávání potřebuje internet, uložené obrázky pak
+      fungují i bez něj.</li>
+  </ul>
+  <p>U každého obrázku vyberte, <b>do které zóny patří</b>. Volba
+  <b>🚫 Nikam (navíc)</b> znamená, že obrázek je tam jen na zmatení — správně má
+  zůstat v nabídce (např. autíčko mezi zeleninou).</p>
+
+  <h3>Vyzkoušet a uložit</h3>
+  <p>Tlačítkem <span class="mockbtn">▶ Vyzkoušet</span> si úlohu hned zahrajete
+  (zkušební hraní se nepočítá do výsledků). Když jste spokojení, ťukněte na
+  <span class="mockbtn green">💾 Uložit</span>.</p>
+
+  <div class="tip"><b>💡 Tip</b>
+  Hotový scénář jde <b>📄 Kopírovat</b> a jen v něm vyměnit obrázky — snadno tak
+  vytvoříte těžší a lehčí verzi stejné úlohy.</div>
+</section>
+
+<section>
+  <h2><span class="n">4</span>Výsledky</h2>
+  <p>Aplikace si potichu zapisuje každé dohrané cvičení. Dítě výsledky nikdy nevidí —
+  zobrazí se jen vám, po ťuknutí na <span class="mockbtn ghost">📊 Výsledky</span>
+  v režimu učitele.</p>
+  <p>U každého záznamu je datum, název úlohy, hvězdičky, <b>počet chybných pokusů
+  včetně toho, které obrázky dělaly problém</b>, a jak dlouho řešení trvalo.
+  Tlačítkem 🗑 jde vše vymazat (třeba na začátku pololetí).</p>
+</section>
+
+<section>
+  <h2><span class="n">5</span>Přenos scénářů na další iPady a tabuli</h2>
+  <p>Scénáře se ukládají do zařízení, na kterém vznikly. Na jiné zařízení je přenesete souborem:</p>
+  <ol>
+    <li>Na zdrojovém iPadu v režimu učitele ťukněte u scénáře na
+      <span class="mockbtn">📤 Export</span> — uloží se soubor.</li>
+    <li>Soubor pošlete přes AirDrop, e-mail nebo sdílené úložiště školy.</li>
+    <li>Na cílovém zařízení (i na počítači u tabule) ťukněte na
+      <span class="mockbtn">📥 Nahrát scénář ze souboru</span> a soubor vyberte.</li>
+  </ol>
+  <div class="warn"><b>⚠️ Zálohujte si práci</b>
+  Data žijí v prohlížeči daného zařízení. Kdyby někdo v Safari smazal data webů,
+  scénáře by zmizely — hotové scénáře si proto vždy exportujte do souboru a uschovejte.</div>
+</section>
+
+<section>
+  <h2><span class="n">6</span>Nápady na scénáře</h2>
+  <div class="idea"><span class="emo">🍽️</span><b>Zelenina na talíř</b>
+    <span>jedna zóna, mezi zeleninou sladkosti a hračky navíc</span></div>
+  <div class="idea"><span class="emo">📦</span><b>Uklidíme pokoj</b>
+    <span>dvě zóny — hračky do krabice, oblečení do koše</span></div>
+  <div class="idea"><span class="emo">🎨</span><b>Barvy</b>
+    <span>„Dej do košíku všechno červené“ — piktogramy z vyhledávání</span></div>
+  <div class="idea"><span class="emo">🐄</span><b>Zvířata domů</b>
+    <span>louka: zvířata ze dvora do ohrady, lesní zvířata do lesa</span></div>
+  <div class="idea"><span class="emo">🔤</span><b>První písmeno</b>
+    <span>„Vyber, co začíná na M“ — mrkev, míč, myš… a chytáky</span></div>
+  <div class="idea"><span class="emo">📸</span><b>Vlastní třída</b>
+    <span>fotka šatny jako pozadí, fotky skutečných věcí dětí</span></div>
+</section>
+
+<section>
+  <h2><span class="n">7</span>Když něco nefunguje</h2>
+  <ul>
+    <li><b>Nehraje zvuk / nečte zadání</b> — zkontrolujte přepínač ztlumení a hlasitost
+      iPadu; čtení potřebuje ťuknout na 🔊 (spustí se i samo na začátku hry).</li>
+    <li><b>Hledání obrázků nic nenajde</b> — zkuste jiné slovo (jednotné číslo funguje
+      nejlépe) a ověřte připojení k internetu.</li>
+    <li><b>Nejde otevřít režim učitele</b> — tlačítko je potřeba <i>podržet</i>,
+      dokud se oranžově nenaplní.</li>
+    <li><b>Aplikace vypadá „zaseknutá“</b> — stáhněte ji z multitaskingu a spusťte
+      z ikony znovu; uložené scénáře zůstávají.</li>
+  </ul>
+</section>
+
+<footer>
+  Přiřazovačka · aplikace i tento návod: <a href="https://valsorims.github.io/prirazovacka/">valsorims.github.io/prirazovacka</a><br>
+  Piktogramy: <a href="https://arasaac.org">ARASAAC</a> — autor Sergio Palao, vlastník Gobierno de Aragón, licence CC&nbsp;BY‑NC‑SA.<br>
+  Návod si můžete vytisknout přímo z prohlížeče (⌘P / Ctrl+P).
+</footer>
+
+</div>
+</body>
+</html>
