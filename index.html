@@ -811,7 +811,21 @@ function demoScenarios(){
       {id:uid(),type:'emoji',value:'🐈',zoneId:null},
     ],
   };
-  return[s1,s2];
+  return[s1,s2,colorsDemo()];
+}
+function colorsDemo(){
+  const mk=(name,emoji,x,y)=>({id:uid(),name,emoji,x,y,w:.44,h:.36});
+  const zR=mk('Červená','🔴',.04,.08),zB=mk('Modrá','🔵',.52,.08),
+        zG=mk('Zelená','🟢',.04,.56),zY=mk('Žlutá','🟡',.52,.56);
+  const it=(v,z)=>({id:uid(),type:'emoji',value:v,zoneId:z.id});
+  return{
+    id:uid(),created:Date.now()+2,
+    name:'Roztřiď podle barev',
+    instruction:'Roztřiď obrázky podle barev do správných košíků.',
+    bg:{type:'preset',value:'plain'},
+    zones:[zR,zB,zG,zY],
+    items:[it('🍓',zR),it('🍎',zR),it('🫐',zB),it('🦋',zB),it('🐸',zG),it('🥦',zG),it('🍋',zY),it('🌻',zY)],
+  };
 }
 
 /* ================= init ================= */
@@ -822,6 +836,13 @@ function demoScenarios(){
     for(const s of demoScenarios())await DB.put('scenarios',s);
     localStorage.setItem('prirazovacka-seeded','1');
     state.scenarios=await DB.getAll('scenarios');
+  }
+  if(!localStorage.getItem('prirazovacka-demo3')){
+    if(!state.scenarios.some(s=>s.name==='Roztřiď podle barev')){
+      await DB.put('scenarios',colorsDemo());
+      state.scenarios=await DB.getAll('scenarios');
+    }
+    localStorage.setItem('prirazovacka-demo3','1');
   }
   renderHome();
   show('scr-home');
